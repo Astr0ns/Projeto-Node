@@ -1,0 +1,12 @@
+<%- include('../partials/header') %>
+
+<h1><%= found.name %></h1>
+<p><strong>E-mail:</strong> <%= found.email %></p>
+<p><strong>Cadastrado em:</strong> <%= new Date(found.created_at).toLocaleDateString('pt-BR') %></p>
+
+<div class="actions">
+  <a href="/users/<%= found.id %>/edit" class="btn">Editar</a>
+  <a href="/users" class="btn btn-outline">Voltar</a>
+</div>
+
+<%- include('../partials/footer') %>

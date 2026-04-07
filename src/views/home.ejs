@@ -1,0 +1,12 @@
+<%- include('partials/header') %>
+
+<h1>Bem-vindo ao MeuProjeto!</h1>
+<p>Este é um projeto Node.js + Express + Apps Script.</p>
+<% if (!user) { %>
+  <a href="/login" class="btn">Entrar</a>
+  <a href="/register" class="btn btn-outline">Cadastrar</a>
+<% } else { %>
+  <a href="/dashboard" class="btn">Ir ao Dashboard</a>
+<% } %>
+
+<%- include('partials/footer') %>

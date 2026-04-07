@@ -1,0 +1,30 @@
+<%- include('../partials/header') %>
+
+<div class="form-container">
+  <h1>Editar Usuário</h1>
+  <% if (error) { %>
+    <div class="alert alert-error"><%= error %></div>
+  <% } %>
+  <form action="/users/<%= found.id %>?_method=PUT" method="POST">
+    <div class="form-group">
+      <label for="name">Nome</label>
+      <input type="text" id="name" name="name" value="<%= found.name %>" required />
+    </div>
+    <div class="form-group">
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" value="<%= found.email %>" required />
+    </div>
+    <div class="form-group">
+      <label for="num-cpf">CPF</label>
+      <input type="text" id="num-cpf" name="num-cpf" value="<%= found.num_cpf %>" required />
+    </div>
+    <div class="form-group">
+      <label for="phone">Telefone</label>
+      <input type="text" id="phone" name="phone" value="<%= found.phone %>" required />
+    </div>
+    <button type="submit" class="btn btn-full">Salvar</button>
+  </form>
+  <p class="form-footer"><a href="/users">Cancelar</a></p>
+</div>
+
+<%- include('../partials/footer') %>

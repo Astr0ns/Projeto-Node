@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title><%= title %> | MeuProjeto</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+<nav class="navbar">
+  <a class="brand" href="/">MeuProjeto</a>
+  <div class="nav-links">
+    <a href="/">Início</a>
+    <a href="/about">Sobre</a>
+    <% if (user) { %>
+      <a href="/users">Usuários</a>
+      <a href="/dashboard">Dashboard</a>
+      <form action="/logout?_method=POST" method="POST" style="display:inline">
+        <button type="submit" class="btn-link">Sair (<%= user.name %>)</button>
+      </form>
+    <% } else { %>
+      <a href="/login">Entrar</a>
+      <a href="/register">Cadastrar</a>
+    <% } %>
+  </div>
+</nav>
+<main class="container">

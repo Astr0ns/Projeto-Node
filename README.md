@@ -1,12 +1,12 @@
-# MeuProjeto — Node.js + Express + MySQL
+# MeuProjeto — Node.js + Express + Apps Script como banco de Dados
 
 ## Estrutura
 
 ```
 project/
 ├── src/
-│   ├── config/
-│   │   └── database.js        # Conexão MySQL (pool)
+│   |
+│   │   
 │   ├── controllers/
 │   │   ├── HomeController.js
 │   │   ├── AuthController.js  # Login, register, logout
