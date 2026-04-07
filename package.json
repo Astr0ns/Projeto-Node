@@ -1,0 +1,22 @@
+{
+  "name": "meu-projeto",
+  "version": "1.0.0",
+  "description": "Projeto Node.js + Express + Google Sheets",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "node-fetch": "^3.3.2",
+    "ejs": "^3.1.9",
+    "dotenv": "^16.3.1",
+    "express-session": "^1.17.3",
+    "bcryptjs": "^2.4.3",
+    "method-override": "^3.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
