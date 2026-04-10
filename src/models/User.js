@@ -36,10 +36,10 @@ const User = {
     return data.id;
   },
 
-  async update(id, { name, email }) {
+  async update(id, { name, email, nasc_data, num_cpf, telefone }) {
     await fetch(API_URL, {
       method: 'POST',
-      body: JSON.stringify({ action: 'update', id, name, email }),
+      body: JSON.stringify({ action: 'update', id, name, email, nasc_data, num_cpf, telefone }),
     });
   },
 

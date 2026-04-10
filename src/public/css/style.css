@@ -1,13 +1,13 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --primary: #4f46e5;
-  --primary-hover: #4338ca;
+  --primary: #2a2d49;
+  --primary-hover: #8a8a8a;
   --danger: #dc2626;
-  --bg: #f9fafb;
-  --surface: #ffffff;
+  --bg: #131f41;
+  --surface: #131f41;
   --border: #e5e7eb;
-  --text: #111827;
+  --text: #ffffff;
   --muted: #6b7280;
   --radius: 8px;
 }
@@ -53,8 +53,7 @@ body {
   transition: background .2s;
 }
 .btn:hover { background: var(--primary-hover); }
-.btn-outline { background: transparent; border: 1px solid var(--primary); color: var(--primary); }
-.btn-outline:hover { background: var(--primary); color: #fff; }
+.btn-outline:hover{ background: var(--primary-hover); }
 .btn-danger { background: var(--danger); }
 .btn-danger:hover { background: #b91c1c; }
 .btn-sm { padding: .3rem .8rem; font-size: .82rem; }
@@ -75,6 +74,9 @@ body {
 /* ── Alerts ── */
 .alert { padding: .75rem 1rem; border-radius: var(--radius); margin-bottom: 1rem; font-size: .9rem; }
 .alert-error { background: #fef2f2; color: var(--danger); border: 1px solid #fecaca; }
+.cpf-status { margin-top: .5rem; font-size: .85rem; }
+.cpf-status.valid { color: #16a34a; }
+.cpf-status.invalid { color: #dc2626; }
 
 /* ── Table ── */
 .table { width: 100%; border-collapse: collapse; background: var(--surface); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); }

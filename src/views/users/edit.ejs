@@ -11,16 +11,29 @@
       <input type="text" id="name" name="name" value="<%= found.name %>" required />
     </div>
     <div class="form-group">
+      <label for="sobrenome">Sobrenome</label>
+      <input type="text" id="sobrenome" name="sobrenome" value="<%= found.sobrenome %>" required />
+    </div>
+    <div class="form-group">
       <label for="email">E-mail</label>
       <input type="email" id="email" name="email" value="<%= found.email %>" required />
     </div>
     <div class="form-group">
       <label for="num-cpf">CPF</label>
-      <input type="text" id="num-cpf" name="num-cpf" value="<%= found.num_cpf %>" required />
+      <input type="text" id="num-cpf" name="num_cpf" value="<%= found.num_cpf %>" required />
+      <% if (typeof cpfValid !== 'undefined') { %>
+        <p class="cpf-status <%= cpfValid ? 'valid' : 'invalid' %>">CPF <%= cpfValid ? 'válido' : 'inválido' %></p>
+      <% } %>
     </div>
     <div class="form-group">
-      <label for="phone">Telefone</label>
-      <input type="text" id="phone" name="phone" value="<%= found.phone %>" required />
+      <label for="telefone">Telefone</label>
+      <input type="text" id="telefone" name="telefone" value="<%= found.telefone || found.phone || '' %>" required />
+    </div>
+    <div class="form-group">
+      <label for="nasc-data">
+        Data de Nascimento
+        <input type="date" id="nasc-data" name="nasc_data" value="<%= found.nasc_data ? new Date(found.nasc_data).toISOString().slice(0,10) : '' %>" required />
+      </label>
     </div>
     <button type="submit" class="btn btn-full">Salvar</button>
   </form>

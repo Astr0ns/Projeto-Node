@@ -13,7 +13,9 @@
     <a href="/">Início</a>
     <a href="/about">Sobre</a>
     <% if (user) { %>
-      <a href="/users">Usuários</a>
+      <% if (user.isAdmin) { %>
+        <a href="/users">Usuários</a>
+      <% } %>
       <a href="/dashboard">Dashboard</a>
       <form action="/logout?_method=POST" method="POST" style="display:inline">
         <button type="submit" class="btn-link">Sair (<%= user.name %>)</button>

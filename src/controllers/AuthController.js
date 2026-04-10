@@ -1,4 +1,5 @@
 const User = require('../models/User');
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL;
 
 const AuthController = {
   // GET /login
@@ -18,8 +19,9 @@ const AuthController = {
       if (!valid) {
         return res.render('auth/login', { title: 'Entrar', error: 'Senha incorreta.', user: null });
       }
+      const isAdmin = user.email === ADMIN_EMAIL;
       req.session.userId = user.id;
-      req.session.user = { id: user.id, name: user.name, email: user.email };
+      req.session.user = { id: user.id, name: user.name, email: user.email, isAdmin };
       const redirectTo = req.session.returnTo || '/dashboard';
       delete req.session.returnTo;
       req.session.save(() => {
@@ -45,8 +47,9 @@ const AuthController = {
         return res.render('auth/register', { title: 'Cadastrar', error: 'E-mail já cadastrado.', user: null });
       }
       const id = await User.create({ name, email, password });
+      const isAdmin = email === ADMIN_EMAIL;
       req.session.userId = id;
-      req.session.user = { id, name, email };
+      req.session.user = { id, name, email, isAdmin };
       req.session.save(() => {
         res.redirect('/dashboard');
       });

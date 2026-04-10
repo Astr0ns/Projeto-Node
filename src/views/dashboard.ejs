@@ -1,7 +1,25 @@
 <%- include('partials/header') %>
 
-<h1>Dashboard</h1>
-<p>Olá, <strong><%= user.name %></strong>! Você está logado.</p>
-<a href="/users" class="btn">Ver Usuários</a>
+    <h1>Dashboard</h1>
+    <p>Olá, <strong>
+            <%= user.name %>
+        </strong>! Você está logado.</p>
 
-<%- include('partials/footer') %>
+    <% if (user.isAdmin) { %>
+        <div class="admin-section">
+            <h2>Área Administrativa</h2>
+            <p>Como administrador, você tem acesso a funcionalidades exclusivas, como:</p>
+            <ul>
+                <li><a href="/users">Gerenciar Usuários</a></li>
+                <!-- Adicione mais links administrativos aqui -->
+            </ul>
+        </div>
+    <% } else { %>
+        <div class="user-section">
+            <h2>Meu Perfil</h2>
+            <p>Esta é a sua página de perfil, onde você pode visualizar e editar suas informações pessoais.</p>
+            <a href="/users/<%= user.id %>/edit" class="btn">Editar Perfil</a>
+        </div>
+    <% } %>
+
+            <%- include('partials/footer') %>
